@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Line_f2f2f2"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/menu_general"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/White"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.yj.wangjatv.widget.AnyTextView
+                android:id="@+id/tv_tab1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/xml_btn_trans_bg_selector"
+                android:gravity="center"
+                android:text="@string/progress_event"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.yj.wangjatv.widget.AnyTextView
+                android:id="@+id/tv_tab2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/xml_btn_trans_bg_selector"
+                android:gravity="center"
+                android:text="@string/end_event"
+                android:textColor="@color/gray_646565"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_c3c3c2" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:scrollbars="none"
+        android:background="@color/White"/>
+
+</LinearLayout>

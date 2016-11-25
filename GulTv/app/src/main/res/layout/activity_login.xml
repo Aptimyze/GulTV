@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:visibility="gone"
+         layout="@layout/menu_general"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"/>
+
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_c4c3c2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gray_f1f1f1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/White"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:visibility="visible"
+                android:id="@+id/rl_guide"
+                >
+
+                <com.viewpagerindicator.TabPageIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray_323232"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dip"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_first_dot"
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:background="@drawable/ic_indicator_on"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/iv_second_dot"
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_marginLeft="4dip"
+                        android:background="@drawable/ic_indicator_off"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/iv_third_dot"
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_marginLeft="4dip"
+                        android:background="@drawable/ic_indicator_off"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/iv_fourth_dot"
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_marginLeft="4dip"
+                        android:background="@drawable/ic_indicator_off"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:background="@color/White">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="40dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="5dp"
+                                android:src="@drawable/ic_email"/>
+                            <com.yj.wangjatv.widget.AnyEditTextView
+                                android:layout_width="210dp"
+                                android:layout_height="28dp"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="10dp"
+                                android:singleLine="true"
+                                android:inputType="textEmailAddress"
+                                android:imeOptions="actionNext"
+                                android:hint="@string/hint_email"
+                                android:textColorHint="@color/gray_c4c3c2"
+                                android:background="@color/transparent"
+                                android:maxLength="30"
+                                android:id="@+id/etv_email"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="260dp"
+                            android:layout_height="2dp"
+                            android:background="@color/colorAccent"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="25dp"
+                                android:layout_marginLeft="5dp"
+                                android:src="@drawable/ic_passwd"/>
+                            <com.yj.wangjatv.widget.AnyEditTextView
+                                android:layout_width="210dp"
+                                android:layout_height="28dp"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="10dp"
+                                android:hint="@string/hint_passwd"
+                                android:textColorHint="@color/gray_c4c3c2"
+                                android:background="@color/transparent"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPassword"
+                                android:maxLength="15"
+                                android:id="@+id/etv_passwd"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="260dp"
+                            android:layout_height="2dp"
+                            android:background="@color/colorAccent"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageButton
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@color/transparent"
+                            android:src="@drawable/btn_login_on"
+                            android:scaleType="fitCenter"
+                            android:id="@+id/ib_login"/>
+
+                        <ImageButton
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="30dp"
+                            android:background="@color/transparent"
+                            android:src="@drawable/btn_signup_on"
+                            android:scaleType="fitCenter"
+                            android:id="@+id/ib_signup"/>
+                    </LinearLayout>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@color/transparent"
+                        android:text="@string/btn_title_find_id_passwd"
+                        android:textColor="@color/gray_7f7f7f"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/btn_find_id_passwd"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

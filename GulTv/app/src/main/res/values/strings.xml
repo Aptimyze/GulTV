@@ -1,0 +1,266 @@
+<resources>
+    <string name="app_name">WangjaTV</string>
+
+    <string name="facebook_app_id">952263391507823</string>
+
+    <string name="kakao_app_key">441def14176f2903a5d5408849948dae</string>
+
+    <string name="typeface_not_found">Typeface %s not found, or could not be loaded. Showing default typeface.</string>
+    <string name="assets_fonts_folder">font/</string>
+
+    <string name="server_problem">접속이 원활하지 않습니다. \n네트워크를 확인 후 다시 시도해주세요</string>
+    <string name="data_parse_error">데이터를 분석하는 과정에 오류가 발생하였습니다.</string>
+    <string name="data_fetch_error">데이터를 가져오는 중 오류가 발생하였습니다.</string>
+    <string name="network_connect_error">네트워크 접속상태를 확인 해 주세요.</string>
+    <string name="please_wait">잠시만 기다려 주세요.</string>
+    <string name="login_facebook_cancel">페이스북 로그인이 취소되였습니다.</string>
+    <string name="login_facebook_failed">페이스북 로그인이 실패하였습니다.</string>
+    <string name="login_kakao_failed">페이스북 로그인이 실패하였습니다.</string>
+    <string name="login_failed">로그인이 실패하였습니다.</string>
+    <string name="check_email_passwd">이메일이나 비밀번호를 확인바랍니다.</string>
+    <string name="app_finish_message">"'뒤로' 버튼을 한번 더 누르면 종료됩니다."</string>
+    <string name="push_error">푸시를 받을수 없습니다.\n계속 하시겠습니까?</string>
+    <string name="error">오류</string>
+    <string name="retry">재시도</string>
+    <string name="cancel">취소</string>
+    <string name="confirm">확인</string>
+    <string name="go_on">계속</string>
+
+    <string name="photo_select_title">사진을 선택해 주세요</string>
+    <string name="photo_option_1">지금 찍어요</string>
+    <string name="photo_option_2">사진앨범에서 선택해요</string>
+    <string name="photo_option_3">삭제</string>
+    <string name="image_max_size_limit_msg">메모리 용량이 5MB이상이여야 합니다.</string>
+
+    <string name="pattern_alphanumeric">^[a-zA-Z0-9]+$</string>
+    <string name="pattern_alphanumeric_monkey">^[a-zA-Z0-9@.]+$</string>
+    <string name="pattern_alpha_hangul">^[a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ\u318D\u119E\u11A2\u2022\u2025a\u00B7\uFE55]+$</string>
+    <string name="pattern_alphanumeric_hangul">^[a-zA-Z0-9가-힣ㄱ-ㅎㅏ-ㅣ\u318D\u119E\u11A2\u2022\u2025a\u00B7\uFE55 \n]+$</string>
+    <string name="pattern_numeric_hangul">^[0-9가-힣ㄱ-ㅎㅏ-ㅣ\u318D\u119E\u11A2\u2022\u2025a\u00B7\uFE55]+$</string>
+    <string name="pattern_alphanumeric_hangul_special">^[a-zA-Z0-9가-힣ㄱ-ㅎㅏ-ㅣ\u318D\u119E\u11A2\u2022\u2025a\u00B7\uFE55 \n!#$%^<![CDATA[&]]>*()?+=\/]+$</string>
+    <string name="pattern_numeric_hangul_special">^[0-9가-힣ㄱ-ㅎㅏ-ㅣ\u318D\u119E\u11A2\u2022\u2025a\u00B7\uFE55 \n!#$%^<![CDATA[&]]>*()?+=\/]+$</string>
+    <string name="input_error_alphanum">영문자와 숫자만 허용합니다.</string>
+    <string name="input_error_alphanum_monkey">영문자와 숫자,@만 허용합니다.</string>
+    <string name="input_error_alpha_hangul">영문자와 한글만 허용합니다.</string>
+    <string name="input_error_alphanumeric_hangul">영문자와 숫자, 한글만 허용합니다.</string>
+    <string name="input_error_alphanumeric_hangul_special">영문자와 숫자, 한글, 특문만 허용합니다.</string>
+    <string name="input_error_numeric_hangul">숫자와 한글만 허용합니다.</string>
+    <string name="input_error_numeric_hangul_special">숫자와 한글, 특문만 허용합니다.</string>
+
+    <string name="intro_info">copyright ⓒ 2016 bithumb All rights reserved</string>
+
+    <string name="input_email_check">이메일을 중복확인해주세요.</string>
+    <string name="input_invalid_email">유효한 메일 형식이 아닙니다.</string>
+    <string name="check_duplicate_email">이메일 중복검사를 해주십시오.</string>
+    <string name="input_duplicate_email">중복된 아이디가 있습니다.</string>
+    <string name="input_valid_email">사용 가능한 이메일입니다.</string>
+    <string name="valid_nickname">사용가능 한 닉네임 입니다.</string>
+    <string name="check_duplicate_nickname">닉네임 중복검사를 해주십시오.</string>
+    <string name="invalid_nickname">현재 사용중인 닉네임 입니다.</string>
+    <string name="input_password_check">비밀번호를 확인해주십시오.</string>
+    <string name="email_length_short">이메일을 5자 이상으로 입력해 주세요.</string>
+    <string name="name_length_short">닉네임을 2자 이상으로 입력해 주세요.</string>
+    <string name="input_phonenumber_check">연락처를 입력해 주세요.</string>
+    <string name="password_length_short">비밀번호를 4자 이상으로 입력해 주세요.</string>
+    <string name="no_match_email_passwd">아이디나 비밀번호가 맞지않습니다.</string>
+    <string name="try_login_again">확인 후 다시 로그인해주세요</string>
+    <string name="agree_user_rule">이용약관에 동의해주세요.</string>
+    <string name="check_all_data">모든 항목이 모두 유효해야 합니다.</string>
+    <string name="your_live">당신의 방송입니다.</string>
+    <string name="your_vod">당신의 vod방송입니다.</string>
+    <string name="input_content">내용을 입력해주세요.</string>
+
+    <!-- dialog -->
+    <string name="input_password"> 비밀번호를 입력하세요. </string>
+    <string name="dlg_confirm"> 확인 </string>
+    <string name="dlg_cancel"> 취소 </string>
+    <string name="my_heart_count" formatted="false"> 현재 나의 하트는 %d개 입니다. </string>
+    <string name="complete_save_setting"> 설정 저장이 완료되었습니다. </string>
+    <string name="dlg_broadcast_category_select"> 방송 분류 선택 </string>
+
+    <!--login activity-->
+    <string name="hint_email">이메일(abc@gmail.com)</string>
+    <string name="hint_passwd">비밀번호(영문/숫자 4~15자)</string>
+    <string name="btn_title_find_id_passwd">아이디/비밀번호 찾기</string>
+
+    <!--signup activity-->
+    <string name="activity_signup_title">회원가입</string>
+    <string name="title_email">이메일</string>
+    <string name="title_passwd">비밀번호</string>
+    <string name="title_nickname">닉네임</string>
+    <string name="title_birthday">생년월일</string>
+    <string name="hint_signup_email">예)abc@gmail.com</string>
+    <string name="hint_nickname">닉네임 입력</string>
+    <string name="hint_birthday">(아이디,패스워드 찾을때 사용)</string>
+    <string name="hint_password_confirm">비밀번호 확인</string>
+    <string name="btn_duplicate">중복확인</string>
+    <string name="profile_info">프로필 정보</string>
+    <string name="agree_use_rule">이용약관/개인정보이용약관 동의</string>
+    <string name="complete_signup">가입이 완료되었습니다.</string>
+    <string name="fail_signup">가입이 실패되었습니다.</string>
+
+    <string name="tab_live"> LIVE 방송 </string>
+    <string name="tab_vod"> VOD방송 </string>
+    <string name="tab_favorite"> 즐겨찾기 </string>
+    <string name="tab_broadcast"> 방송하기 </string>
+    <string name="tab_more"> 더보기 </string>
+
+    <!-- event list page -->
+    <string name="event">이벤트</string>
+    <string name="progress_event">진행이벤트</string>
+    <string name="end_event">종료이벤트</string>
+    <string name="request_duration">신청기간</string>
+
+    <!-- event detail page -->
+    <string name="event_detail">Event</string>
+    <string name="go_event_page">이벤트 페이지로 이동</string>
+    <string name="publish_date">발표일자</string>
+    <string name="select_member_count">선발인원</string>
+
+    <!-- live fragment page -->
+    <string name="popularity_order">인기순</string>
+    <string name="recent_order">최신순</string>
+    <string name="watcher_order">시청자순</string>
+
+    <!-- fav fragment page -->
+    <string name="all">전체</string>
+    <string name="broadcasting">방송중</string>
+    <string name="offline">오프라인</string>
+
+    <!-- dlg inform -->
+    <string name="dlg_inform_title">알림</string>
+    <string name="dlg_fan_purchse_heart_content" formatted="false">팬 가입을 위해 하트%d개 구매가 필요합니다.</string>
+    <string name="dlg_fan_use_heart_content" formatted="false">팬 가입을 위해 하트%d개를 쓰시겠습니까?</string>
+
+    <string name="msg_send_heart_for_broadcast" formatted="false">방송보기를 위해 하트%d개를 쓰시겠습니까?</string>
+
+    <!-- live fragment page -->
+    <string name="btn_title_chatting">채팅하기</string>
+    <string name="btn_title_heart">후원하기</string>
+    <string name="btn_title_heart_purchase">하트구매</string>
+    <string name="btn_title_like">추천하기</string>
+    <string name="btn_title_fav">즐겨찾기</string>
+    <string name="tap_chatting">채팅</string>
+    <string name="tap_broadcast">방송리스트</string>
+    <string name="tap_fav">즐겨찾기</string>
+
+    <!-- more fragment page -->
+    <string name="my_wangjatv">나의 왕자티비</string>
+    <string name="modify_profile">프로필 수정</string>
+    <string name="app_introduction">앱 설명</string>
+    <string name="app_event">이벤트</string>
+    <string name="item_purchase">아이템 구매</string>
+    <string name="use_rule">공지사항</string>
+    <string name="auto_login">자동로그인</string>
+    <string name="g_connection">3G/4G 연결</string>
+    <string name="auto_rotate">자동회전</string>
+    <string name="alarm_setting">알림설정</string>
+
+    <!-- broadcast fragment page -->
+    <string name="broadcast_title">방송제목</string>
+    <string name="preview_title">미리보기</string>
+    <string name="input_broadcast_title">방송제목을 입력해주세요.</string>
+    <string name="input_heart_cnt">하트개수를 입력해주세요.</string>
+    <string name="input_fan_grade">팬등급을 선택해주세요.</string>
+    <string name="viewer_count">시청인원</string>
+    <string name="video_quality">화질설정</string>
+    <string name="high_video_quality">고화질</string>
+    <string name="normal_video_quality">일반화질</string>
+    <string name="low_video_quality">저화질</string>
+    <string name="over_19_age">19세 이상</string>
+    <string name="max_viewer_count">(최대500명)</string>
+    <string name="allow_only_adult">성인에게만 방송참여를 허락합니다.</string>
+    <string name="password_numbers">4자리 숫자</string>
+    <string name="broadcast_category">방송분류</string>
+    <string name="heart_cnt">하트개수</string>
+    <string name="fan_grade">팬등급</string>
+    <string name="select_broadcast_category">카테고리를 선택해주세요.</string>
+    <string name="broadcast_type">방송형태</string>
+    <string name="broadcast_type_1">일반</string>
+    <string name="broadcast_type_2">유로</string>
+    <string name="broadcast_type_3">팬클럽</string>
+    <string name="broadcast_type_4">1<![CDATA[:]]>1</string>
+
+    <!-- broadcast activity -->
+    <string name="camera_transfer">카메라전환</string>
+    <string name="start_broadcast"> 방송이 시작되었습니다. </string>
+    <string name="end_broadcast"> 방송이 완료되었습니다. </string>
+    <string name="pause_broadcast">방송정지</string>
+    <string name="title_event">이벤트</string>
+    <string name="title_force_exit"> 강퇴 </string>
+    <string name="title_bj">BJ</string>
+
+    <!-- vodplayer activity -->
+    <string name="failed_play_vod"> vod방송을 플레이할수 없습니다. </string>
+    <string name="complete_play_vod"> vod방송보기가 완료되었습니다. </string>
+    <string name="failed_broadcast"> 방송이 실패되었습니다.</string>
+    <string name="failed_create_chat_room"> 채팅방 생성이 실패되었습니다.</string>
+    <string name="failed_enter_chat_room"> 채팅방 가입에 실패되었습니다.</string>
+    <string name="success_enter_chat_room"> 채팅방에 가입되었습니다.</string>
+
+    <!-- live activity -->
+    <string name="reopened_live"> 방송이 재개 되었습니다.</string>
+    <string name="offlined_live"> 방송이 오프라인 되었습니다.</string>
+    <string name="no_live_playing"> 방송중인 방송이 아닙니다.</string>
+    <string name="complete_live"> 방송보기에 탈퇴합니다. </string>
+
+    <!-- purchase item activity -->
+    <string name="purchase_heart">하트 구매하기</string>
+    <string name="purchase_useticket">이용권 구매하기</string>
+
+    <!-- findpwd activity -->
+    <string name="activity_find_pwd">비밀번호 찾기</string>
+    <string name="title_find_pwd_email">회원가입시 등록한 아이디(e-mail)</string>
+    <string name="title_find_pwd_birth">회원가입시 등록한 생년월일</string>
+    <string name="hint_find_pwd_birthday">예)1990-01-01</string>
+    <string name="input_birthday">날자를 입력해주세요.</string>
+    <string name="btn_title_send">전송</string>
+
+    <string name="activity_notice_title">공지사항</string>
+    <string name="activity_title_modify_profile">프로필 수정</string>
+    <string name="activity_rule">이용약관</string>
+
+    <!-- profilemodify activity -->
+    <string name="logout">로그아웃</string>
+    <string name="complete_modify">수정이 완료되었습니다.</string>
+
+
+    <!-- findpwd dialog -->
+    <string name="dialog_find_pwd_title">임시비밀번호 확인</string>
+    <string name="dialog_find_pwd_content" formatted="false">회원님의 임시비밀번호는 %s입니다.\n로그인 후 변경해주세요.</string>
+
+    <string name="dialog_inform_heart">하트개수가 모자랍니다.</string>
+    <string name="dialog_inform_purchase_activity">하트 구매페이지로 이동합니다.\n구매페이지 이동시 방송(시청)이 \n종료됩니다.</string>
+
+    <string name="dlg_logout_content">로그아웃 하시겠습니까?</string>
+
+    <!--GetPhotoDialog-->
+    <string name="photo_upload">사진 업로드</string>
+    <string name="photo">사진</string>
+    <string name="gallery">갤러리</string>
+    <string name="camera">카메라</string>
+    <string name="failed_upload">업로드가 실패되었습니다.</string>
+    <string name="success_upload">업로드되었습니다.</string>
+    <string name="success_remove_thumb">썸네일을 삭제했습니다.</string>
+
+    <string name="msg_send_heart">하트를 전송했습니다.</string>
+    <string name="msg_send_heart_count" formatted="false">VOD를 보기위해 하트%d개를 쓰시겠습니까?</string>
+    <string name="msg_fail_send_heart">하트전송에 실패했습니다.</string>
+    <string name="msg_not_send_heart">하트전송을 거절했습니다.</string>
+    <string name="msg_add_fan">즐겨찾기에 추가했습니다.</string>
+    <string name="msg_duplicate_fan">이미 즐겨찾기가 되어 있습니다.</string>
+    <string name="msg_add_like">추천했습니다.</string>
+    <string name="msg_duplicate_like">이미 추천했습니다.</string>
+    <string name="msg_software_update">버전 업데이트</string>
+    <string name="msg_other_login">다른 기기가 로그인 되었습니다.\n앱을 종료합니다.</string>
+    <string name="msg_force_exit_live">강제퇴장조치로 탈퇴당했습니다.</string>
+    <string name="msg_cannot_enter_live_force">강제퇴장조치로 입장불가입니다.</string>
+    <string name="msg_full_live_room">방이 꽉차있습니다.</string>
+    <string name="msg_live_allow_adult">19세이상 성인만 방송을 열람할수 있습니다.</string>
+    <string name="msg_current_live">현재 실행중인 라이브방송입니다.</string>
+    <string name="msg_success_logout">로그아웃 되었습니다</string>
+
+    <string name="input_chatting_text">채팅텍스트를 입력해주세요.</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

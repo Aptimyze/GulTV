@@ -1,0 +1,6 @@
+<!-- 에니메이션이 끝날때까지 X좌표가 0인 지점에 위치한다(변동없이 고정) -->
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_interpolator"
+    android:fromXDelta="0"
+    android:toXDelta="0"
+    android:duration="@android:integer/config_longAnimTime" />

@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cc000000"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <com.yj.wangjatv.widget.AnyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/photo_upload"
+            android:textColor="@color/Black"
+            android:textSize="15sp" />
+
+        <com.yj.wangjatv.widget.AnyTextView
+            android:id="@+id/bt_take"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/xml_dialog_btn_selector"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/camera"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+        <com.yj.wangjatv.widget.AnyTextView
+            android:id="@+id/bt_album"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/xml_dialog_btn_selector"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/gallery"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+        <com.yj.wangjatv.widget.AnyTextView
+            android:id="@+id/bt_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/xml_dialog_btn_selector"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

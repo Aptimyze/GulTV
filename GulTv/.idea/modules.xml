@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/library/SlidingMenu/SlidingMenu.iml" filepath="$PROJECT_DIR$/library/SlidingMenu/SlidingMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WangjaTV.iml" filepath="$PROJECT_DIR$/WangjaTV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/gifview/gifview.iml" filepath="$PROJECT_DIR$/library/gifview/gifview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/progressbar/progressbar.iml" filepath="$PROJECT_DIR$/library/progressbar/progressbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/viewpager_indicator/viewpager_indicator.iml" filepath="$PROJECT_DIR$/library/viewpager_indicator/viewpager_indicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/vitamio/vitamio.iml" filepath="$PROJECT_DIR$/library/vitamio/vitamio.iml" />
+    </modules>
+  </component>
+</project>

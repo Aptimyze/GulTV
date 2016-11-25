@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    android:background="@color/transparent">
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:background="@drawable/xml_dialog_yes"
+        android:textColor="@color/White"
+        android:textSize="11sp"
+        android:id="@+id/btn_bj"
+        android:visibility="gone"
+        android:layout_marginRight="10dp"
+        android:text="@string/title_bj"/>
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:background="@drawable/xml_dialog_yes"
+        android:textColor="@color/White"
+        android:textSize="11sp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btn_force_exit"
+        android:text="@string/title_force_exit"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/btn_bj"
+        android:layout_toLeftOf="@+id/btn_force_exit"
+        android:orientation="horizontal">
+        <com.yj.wangjatv.widget.AnyTextView
+            android:id="@+id/tv_user_name"
+            style="@style/font_686868_bold_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@color/transparent"
+            android:text="이름"
+            />
+        <com.yj.wangjatv.widget.AnyTextView
+            android:id="@+id/tv_message"
+            style="@style/font_343434_bold_13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@color/transparent"
+            android:text="채팅합시다."
+            />
+    </LinearLayout>
+</RelativeLayout>

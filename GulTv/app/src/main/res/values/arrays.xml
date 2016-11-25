@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cate1">
+        <item>각종수리</item>
+        <item>이사/청소</item>
+        <item>가사/육아/도우미</item>
+        <item>간병/방문목욕</item>
+        <item>핸드메이드</item>
+        <item>배달/심부름</item>
+        <item>책읽어주기/말동무</item>
+        <item>반려동물 맡아주기</item>
+        <item>기타 대행서비스</item>
+    </string-array>
+</resources>

@@ -1,0 +1,744 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!--기본 에디트 텍스트-->
+    <style name="font_edit_default">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textCursorDrawable">@drawable/xml_cursor</item>
+        <item name="android:cacheColorHint">@color/gray_b2b2b2</item>
+    </style>
+
+    <!--댓글쓰기-->
+    <style name="font_edit_reply_write">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textCursorDrawable">@drawable/xml_cursor</item>
+        <item name="android:cacheColorHint">@color/gray_b2b2b2</item>
+        <item name="android:lineSpacingExtra">7dp</item>
+    </style>
+
+    <style name="font_black_10">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_black_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_black_bold_18">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_white_10">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_white_bold_10">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_white_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_white_bold_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_white_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_white_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_white_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_white_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_white_bold_16">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_white_bold_18">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_white_bold_24">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_737373_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_737373</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_737373_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_737373</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_737373_bold_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_737373</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_8d8d8d_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_8d8d8d</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_8d8d8d_bold_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_8d8d8d</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_c3c3c5_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_c3c3c5</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_69696b_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_69696b</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_4c4c4c_10">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/gray_4c4c4c</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_4c4c4c_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_4c4c4c</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_4c4c4c_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_4c4c4c</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_4c4c4c_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_4c4c4c</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_4c4c4c_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_4c4c4c</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_4c4c4c_bold_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_4c4c4c</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_9b9b9d_9">
+        <item name="android:textSize">9dp</item>
+        <item name="android:textColor">@color/gray_9b9b9d</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_01355d_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/blue_01355d</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_01355d_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/blue_01355d</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_01355d_bold_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/blue_01355d</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_191919_bold_18">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/black_191919</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_a3a3a3_bold_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_a3a3a3</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_585858_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_585858</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_585858_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_585858</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_585858_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_585858</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_585858_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_585858</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_585858_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_585858</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_585858_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_585858</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_585858_bold_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_585858</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_666666_7">
+        <item name="android:textSize">7dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_666666_8">
+        <item name="android:textSize">8dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_666666_10">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_666666_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_666666_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_666666_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_666666_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_666666_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_666666_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_666666_17">
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/gray_666666</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_4f4f4f_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_4f4f4f</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_4f4f4f_bold_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_4f4f4f</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_333333_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_333333_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_333333_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <style name="font_333333_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_333333_bold_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_333333_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_333333_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_333333_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_333333_bold_18">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_333333_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_333333_bold_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_333333_bold_16">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_333333_bold_17">
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+    <style name="font_303030_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/black_303030</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_303030_bold_16">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/black_303030</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_757575_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_757575</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_afb3b8_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_afb3b8</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_424242_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_424242</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_424242_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_424242</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_424242_bold_16">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/gray_424242</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_424242_bold_17">
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/gray_424242</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_b8b8b8_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_b8b8b8</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_b8b8b8_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_b8b8b8</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_171717_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_2f2f30</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_8d8d8d_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_8d8d8d</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_8d8d8d_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_8d8d8d</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_5e5e5e_bold_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_5e5e5e</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_bcbebf_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_bcbebf</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_bcbebf_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_bcbebf</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_343434_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_343434</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_343434_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_343434</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_343434_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_343434</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_343434_bold_15">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_343434</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_686868_bold_10">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/gray_686868</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_656565_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_656565</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_babcbd_9">
+        <item name="android:textSize">9dp</item>
+        <item name="android:textColor">@color/gray_babcbd</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_babcbd_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_babcbd</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_404041_bold_16">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/gray_404041</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_6f6f70_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_404041</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_676767_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_676767</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_bdbfc0_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_bdbfc0</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_404040_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_404040</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_3b1e1e_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/brown_3b1e1e</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_a1a1a1_bold_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_a1a1a1</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_b9bbbc_bold_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_a1a1a1</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_7f7f7f_11">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@color/gray_7f7f7f</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_7f7f7f_14">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/gray_7f7f7f</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="font_464647_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_464647</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_474747_bold_12">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray_474747</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="font_010101_bold_13">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/gray_333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_ed1c66_bold_15">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="font_323232_14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray_323232</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+</resources>

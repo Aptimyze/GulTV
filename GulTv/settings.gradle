@@ -1,0 +1,6 @@
+include ':app', ':SlidingMenu',':vitamio', ':viewpager_indicator',':gifview',':progressbar'
+project(':SlidingMenu').projectDir = new File('library/SlidingMenu')
+project(':vitamio').projectDir = new File('library/vitamio')
+project(':viewpager_indicator').projectDir = new File('library/viewpager_indicator')
+project(':gifview').projectDir = new File('library/gifview')
+project(':progressbar').projectDir = new File('library/progressbar')

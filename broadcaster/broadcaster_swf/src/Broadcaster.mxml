@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   width="100%" height="100%"
+			   maxWidth="560"
+			   applicationComplete="onApplicationComplete(event);">
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="resolutionGroup" enabled="false" />
+	</fx:Declarations>
+	
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		
+		@font-face {
+			src: url("assets/font/malgun.ttf");
+			font-family: 'Lato';
+			font-weight: normal;
+			embedAsCFF: true;
+		}
+		
+		* {
+			font-family: 'Lato';
+			font-name: 'Lato';
+			font-size: 12;
+		}
+		
+		.header {
+			font-size: 14;
+		}
+		
+		.placeholder {
+			color: #c4c3c2;	
+		}
+		
+		.non-placeholder {
+			color: #323232;
+		}
+		
+		.no-camera {
+			color: #fff;
+			text-align: center;
+		}
+		
+		mx|Alert {
+			font-family: '_sans';
+			embedAsCFF: false;
+		}
+		
+		mx|Button {
+			font-family: '_sans';
+			embedAsCff: false;
+		}
+	</fx:Style>
+	
+	<s:Group width="100%" height="100%">
+		<s:Rect width="100%" height="100%">
+			<s:fill><s:SolidColor color="#323232" /></s:fill>
+		</s:Rect>
+		<s:VGroup width="100%" height="100%"
+				  gap="4"
+				  horizontalAlign="center"
+				  paddingTop="5" paddingLeft="5"
+				  paddingBottom="5" paddingRight="5"
+				  >
+			<s:Group width="100%">
+				<s:Rect width="100%" height="100%">
+					<s:fill>
+						<s:SolidColor color="#ffffff"/>
+					</s:fill>
+				</s:Rect>
+			
+				<s:VGroup width="100%" height="100%" chromeColor="#FFFFFF" horizontalAlign="center"
+						  horizontalCenter="0" verticalCenter="0">
+					<s:Group width="100%">
+						<s:HGroup width="100%"  verticalAlign="middle"
+								  paddingBottom="10" paddingLeft="10" paddingRight="10"
+								  paddingTop="10">
+							<s:Label color="#323232" text="방송제목" verticalCenter="0"/>
+							<s:TextInput id="streamNameField" width="100%" borderColor="#FFFFFF"
+										 color="#615F5D" enabled="false"
+										 focusIn="onStreamNameFieldFocus();"
+										 focusOut="onStreamNameFieldBlur();" styleName="placeholder"
+										 text="{STREAMNAME_PLACEHOLDER}" verticalCenter="0"/>
+							
+						</s:HGroup>
+					</s:Group>
+					
+					<s:Group width="100%">
+						<s:VGroup width="100%"
+								  paddingTop="10" paddingLeft="10"
+								  paddingBottom="10" paddingRight="10">
+							
+							<s:Label text="화질설정:" color="#323232" />
+							
+							<!-- Resolution Quality -->
+							<s:HGroup width="100%" verticalAlign="baseline">
+								
+								<s:Button id="highResolutionSelect" 
+										  label="{RESOLUTION_HIGH}"
+										  color="#ffffff"
+										  click="onClickHighResolution()"/>
+								<s:Button id="midResolutionSelect" 
+											   label="{RESOLUTION_MID}"
+											   color="#ffffff"
+											   click="onClickMidResolution()"
+											   />
+								<s:Button id="lowResolutionSelect"
+											   label="{RESOLUTION_LOW}"
+											   color="#ffffff"
+											   click="onClickLowResolution()"
+											   />
+							</s:HGroup>
+							
+						</s:VGroup>
+					</s:Group>
+					
+					<s:Group width="100%">
+						<s:VGroup width="100%"
+								  paddingTop="10" paddingLeft="10"
+								  paddingBottom="10" paddingRight="10"   verticalAlign="middle">
+							<s:Label text="카메라 선택" color="#323232" />
+							<s:ComboBox  id="cbCamera"  dataProvider="{cameraNames}" width="180"
+										 labelToItemFunction="selectCameraLabel"
+										 change="selectCamera(event);" selectedIndex="0" 
+										 labelField="value"/>    
+						</s:VGroup>
+					</s:Group>
+					
+					<s:Group width="100%">
+	
+						<s:VGroup width="100%"
+								  paddingTop="10" paddingLeft="10"
+								  paddingBottom="10" paddingRight="10">
+							<!-- Upstream Buffer -->
+							<s:CheckBox id="saveCheck"
+										width="100%"
+										label="저장기능"
+										enabled="false"
+										selected="false"
+										/>
+						</s:VGroup>
+					</s:Group>
+					
+					
+					<s:Group width="100%">
+						<s:VGroup width="100%"
+								  paddingLeft="10"
+								  paddingBottom="10" paddingRight="10">
+							<!-- Upstream Buffer -->
+							<s:CheckBox id="bufferCheck"
+										width="100%"
+										label="버퍼기능"
+										enabled="false"
+										selected="false"
+										/>
+						</s:VGroup>
+					</s:Group>
+					
+					<s:Group width="100%">
+						<s:VGroup width="100%" 
+								  horizontalAlign="center"
+								  paddingTop="20" paddingLeft="10"
+								  paddingBottom="20" paddingRight="10">
+							
+							<!-- Video Container -->
+							<s:Group width="320" height="240">
+								<s:Rect width="100%" height="100%">
+									<s:fill>
+										<s:SolidColor color="#E31900" />
+									</s:fill>
+								</s:Rect>
+								<s:Label width="100%" height="100%"
+										 styleName="no-camera"
+										 verticalAlign="middle"
+										 text="No Camera Detected"
+										 />
+								<s:SpriteVisualElement id="videoContainer"
+													   width="320" height="240"
+													   horizontalCenter="0"
+													   />	
+							</s:Group>
+							
+							<s:Button id="startStreamButton"
+									  width="50%"
+									  label="{START_BROADCAST}"
+									  enabled="false"
+									  color="#ffffff"
+									  click="toggleBroadcast();"
+									  />
+							
+						</s:VGroup>
+					</s:Group>
+					
+					<s:Group width="100%">
+						<s:VGroup width="100%"
+								  paddingTop="10" paddingLeft="10"
+								  paddingBottom="10" paddingRight="10">
+							
+							<!-- Time & Messages -->
+							<s:HGroup width="100%" height="16">
+								<s:Label text="시간:" />
+								<s:Label id="timeField"
+										 width="100%"
+										 text="0"
+										 />
+							</s:HGroup>
+							
+							<s:TextArea id="logField"
+										width="100%" height="100%"
+										/>
+							
+						</s:VGroup>
+					</s:Group>
+				</s:VGroup>
+			</s:Group>
+		</s:VGroup>
+	</s:Group>
+	<fx:Script>
+		<![CDATA[
+			import flash.utils.setTimeout;
+			
+			import mx.binding.utils.BindingUtils;
+			import mx.collections.ArrayList;
+			import mx.controls.Alert;
+			import mx.core.FlexGlobals;
+			import mx.events.FlexEvent;
+			import mx.managers.BrowserManager;
+			import mx.managers.IBrowserManager;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.http.mxml.HTTPService;
+			import mx.utils.URLUtil;
+			
+			import spark.events.IndexChangeEvent;
+			
+			private var bm:IBrowserManager;
+			
+			private var netConnection:NetConnection;
+			private var netStream:NetStream;
+			private var video:Video;
+			
+			private var camera:Camera;
+			private var microphone:Microphone;
+			
+			private var streamName:String;
+			private var title:String;
+			private var streamHost:String = "localhost";
+			private var broadcastNo:int = 0;
+			
+			private var quality:String = RESOLUTION_MID;
+			private var useHigherQuality:Boolean = false;
+			
+			[Bindable]
+			public var cameraNames:ArrayList;
+			
+			[Bindable] public var RESOLUTION_HIGH:String = "고화질";
+			[Bindable] public var RESOLUTION_MID:String = "일반화질";
+			[Bindable] public var RESOLUTION_LOW:String = "저화질";
+			[Bindable] public var STREAMNAME_PLACEHOLDER:String = "Enter stream name...";
+			[Bindable] public var START_BROADCAST:String = "방송 시작";
+			[Bindable] public var STOP_BROADCAST:String = "방송 중지";
+			
+			private var accessToken:String = "wangjatv_token";
+			
+			private var startedRecord:Boolean = false;
+			public  var httpData:HTTPService;  
+	
+			
+			
+			public function onApplicationComplete(event:FlexEvent):void {
+				
+				System.useCodePage = true;
+				
+				// Access camera and fail if not available.
+				camera = Camera.getCamera();		
+				
+				if(camera == null) {
+					Alert.show("A camera is required to broadcast with this example.\n\nPlease connect a camera and reload this page.","No Camera Found!");
+					return;
+				}
+				
+				// Access target host address to stream to and fail if not available.
+				// The host adress is taken from a query parameter of the url.
+				// e.g, http://localhost:5080/live/broadcast.jsp?host=10.0.0.1
+				if(loaderInfo.parameters.host) {
+					streamHost = loaderInfo.parameters.host;
+				}
+				
+				// Enable input fields as we have basic criteria
+				// streamNameField.enabled = true;
+				resolutionGroup.enabled = true;
+				bufferCheck.enabled = true;
+				saveCheck.enabled = true;
+				
+				highResolutionSelect.setStyle("chromeColor", 0xed1c66);
+				midResolutionSelect.setStyle("chromeColor", 0xc4c3c2);
+				lowResolutionSelect.setStyle("chromeColor", 0xc4c3c2);
+				startStreamButton.setStyle("chromeColor", 0xed1c66);
+				
+				// Default AMF encoding.
+				NetConnection.defaultObjectEncoding = ObjectEncoding.AMF0;
+				
+				// Access Microphone
+				microphone = Microphone.getMicrophone();
+				
+				var names:Array = Camera.names;
+				
+				cameraNames = new ArrayList();
+				for(var i:int = 0; i < names.length; i++) {
+					cameraNames.addItem(names[i]);
+				}
+				
+				cbCamera.selectedIndex = 0;
+				camera = Camera.getCamera("0");
+				
+				// Attach Camera to Video display
+				video = new Video();
+				video.attachCamera(camera);
+				videoContainer.addChild(video);
+				
+				// Log current metadata about devices.
+				log("Using " + camera.name);
+				log("Using " + microphone.name);
+				
+				streamName = FlexGlobals.topLevelApplication.parameters.streamName;
+				if(streamName == null) {
+					streamName = "";
+				}
+				
+				title = decodeURI(FlexGlobals.topLevelApplication.parameters.title);
+				if(title == null) {
+					title = "방송제목이 없음";
+				}
+				
+				streamNameField.text = title;
+				
+				broadcastNo = FlexGlobals.topLevelApplication.parameters.broadcastNo;
+				
+				// Simple binding to enable ability to stream with valid stream name value entry.
+				BindingUtils.bindSetter(invalidateStreamName, this, ['streamNameField', 'text']);
+				
+				if(ExternalInterface.available) {
+					try {
+						ExternalInterface.addCallback("resetHost", handleResetHost);
+					}
+					catch(e:Error) {
+						// Not supported. Most likely Security issue.
+					}
+				}
+				
+			}
+			
+			public function handleResetHost(value:String):void {
+				
+				if(this.streamHost != value) {
+					this.streamHost = value;
+					if(this.netConnection != null && this.netConnection.connected) {
+						this.stopBroadcast();
+						this.startBroadcast();
+					}
+				}
+				
+			}
+			
+			public function onStreamNameFieldFocus():void {
+				streamNameField.text = streamNameField.text == STREAMNAME_PLACEHOLDER ? "" : streamNameField.text;
+				streamNameField.styleName = "non-placeholder";
+			}
+			
+			public function onStreamNameFieldBlur():void {
+				if(streamNameField.text == "") {
+					streamNameField.text = STREAMNAME_PLACEHOLDER;
+					streamNameField.styleName = "placeholder";
+				}
+				else {
+					streamNameField.styleName = "non-placeholder";
+				}
+			}
+			
+			private function invalidateStreamName(value:String):void {
+				this.startStreamButton.enabled = (value != STREAMNAME_PLACEHOLDER && value != "");
+			}
+			
+			public function onClickHighResolution():void {
+				setResolution("0");
+			}
+			
+			public function onClickMidResolution():void {
+				setResolution("1");
+			}
+			
+			public function onClickLowResolution():void {
+				setResolution("2");
+			}
+			
+			public function setResolution(idx:String):void {
+				
+				highResolutionSelect.setStyle("chromeColor", 0xc4c3c2);
+				midResolutionSelect.setStyle("chromeColor", 0xc4c3c2);
+				lowResolutionSelect.setStyle("chromeColor", 0xc4c3c2);
+				
+				if(idx == "0") {
+					quality = RESOLUTION_HIGH;
+					highResolutionSelect.setStyle("chromeColor", 0xed1c66);
+					camera.setMode(640,480,15,false);
+				}
+				else if(idx == "1"){
+					quality = RESOLUTION_MID;
+					midResolutionSelect.setStyle("chromeColor", 0xed1c66);
+					camera.setMode(320,240,15,false);
+				}
+				else if(idx == "2"){
+					quality = RESOLUTION_LOW;
+					lowResolutionSelect.setStyle("chromeColor", 0xed1c66);
+					camera.setMode(160,120,15,false);
+				}
+				
+			}
+			
+			private function log(obj:Object):void {
+				if(obj is String) {
+					logField.appendText(obj.toString());
+				}
+				else if (obj is Number) {
+					logField.appendText("\r\n" + String(obj));
+				}
+				else {
+					try {
+						logField.appendText(JSON.stringify(obj, null, 2));
+					}
+					catch(e:Error) {
+						logField.appendText(obj.toString());
+						for(var s:String in obj) {
+							logField.appendText("\r\n\t" + s);
+						}
+					}
+				}
+				logField.appendText("\r\n");
+			}
+			
+			public function toggleBroadcast():void {	
+				
+				// If we established a previous new connection, stop the broadcast.
+				if(netConnection != null) {
+					startendBroadcast(false);
+					if(startedRecord == true) {
+						stopRecord();
+					}
+					else {
+						stopBroadcast();
+					}
+				}
+				else {
+					startendBroadcast(true);
+					startBroadcast();
+				}
+				
+			}
+			
+			private function stopBroadcast():void {
+				
+				// Shut down event handlers and instances.
+				if(netStream != null) {
+					netStream.removeEventListener(NetStatusEvent.NET_STATUS, onStatus, false);
+					netStream.close();
+				}
+				if(netConnection != null) {
+					netConnection.removeEventListener(NetStatusEvent.NET_STATUS, onStatus, false);
+					netConnection.close();
+				}
+				
+				netStream=null;
+				netConnection=null;
+				startStreamButton.label = START_BROADCAST;
+				removeEventListener(Event.ENTER_FRAME, onFrame, false);
+				if(ExternalInterface.available) {
+					try{
+						ExternalInterface.call("broadcast.stop");
+					}catch(e:Error){
+						
+					}
+				}
+				
+			}
+			
+			private function startBroadcast():void {
+				
+				var rtmpEndpoint:String;
+				
+				// Assign stream quality.
+				if(quality == RESOLUTION_HIGH) {
+					quality = highResolutionSelect.label.toLowerCase();
+				}
+				else if(quality == RESOLUTION_MID) {
+					quality = midResolutionSelect.label.toLowerCase();
+				}
+				else if(quality == RESOLUTION_LOW) {
+					quality = lowResolutionSelect.label.toLowerCase();
+				}
+				
+				// Assign stream name value.
+				// streamName = streamNameField.text;
+				
+				// Create new NetConnection instance.
+				netConnection = new NetConnection();
+				netConnection.client = this;
+				netConnection.addEventListener(NetStatusEvent.NET_STATUS, onStatus, false, 0, true);
+				// 'live' is our endpoint from the Red5 Pro Server webapps.
+				rtmpEndpoint = "rtmp://" + streamHost + "/live";
+				netConnection.connect(rtmpEndpoint);
+				
+				startStreamButton.label = STOP_BROADCAST;
+				timeField.text = Number(0).toString();
+				addEventListener(Event.ENTER_FRAME, onFrame, false, 0, true);
+				log("Streaming to: " + rtmpEndpoint + "...");
+				if(ExternalInterface.available) {
+					try{
+						ExternalInterface.call("broadcast.start",{host:rtmpEndpoint,streamName:streamName});
+					}catch(e:Error){
+						
+					}
+				}
+			}
+			
+			protected function onFrame(event:Event):void {
+				// update time field based on NetStream.
+				if(netStream != null) {
+					timeField.text = netStream.time.toFixed(2);
+				}
+			}
+			
+			protected function onStatus(event:NetStatusEvent):void {
+				
+				log("" + event.info.code);
+				if(ExternalInterface.available) {
+					try{
+						var rtmpEndpoint:String = "rtmp://" + streamHost + "/live";
+						ExternalInterface.call("broadcast.onStatus",{host:rtmpEndpoint,streamName:streamName, status:"" + event.info.code });
+					}catch(e:Error){
+						
+					}
+				}
+				// Determine event code reference.
+				switch(event.info.code) {
+					
+					case "NetConnection.Connect.Closed":
+						stopBroadcast();						
+						break;
+					
+					case "NetConnection.Connect.Success":
+						
+						var h264settings:H264VideoStreamSettings;
+						
+						netStream = new NetStream(netConnection);
+						netStream.bufferTime = 0;
+						netStream.client = this;
+						microphone.codec = "speex";
+						netStream.attachCamera(camera);
+						netStream.addEventListener(NetStatusEvent.NET_STATUS, onStatus, false);
+						
+						if(quality == RESOLUTION_LOW) {
+							h264settings = setUpLowQualityBroadcast();
+						}
+						else if(quality== RESOLUTION_MID) {
+							h264settings = setUpMidQualityBroadcast();
+						}
+						else if(quality==RESOLUTION_HIGH) {	
+							h264settings = setUpHighQualityBroadcast();
+						}												
+						
+						microphone.framesPerPacket = 2;
+						microphone.noiseSuppressionLevel = 0;
+						microphone.setUseEchoSuppression(false);							
+						microphone.gain = 50;
+						microphone.enableVAD = false;							
+						microphone.setSilenceLevel(0);
+						
+						netStream.videoStreamSettings = h264settings;	
+						netStream.attachAudio(microphone);							
+						netStream.publish(streamName);
+						log("Publishing as stream name '" + streamName + "'...");
+						
+						break;
+					
+					case "NetStream.Publish.BadName":
+						// Provided a stream name that was possibly already taken.
+						stopBroadcast();
+						log("ERROR: Choose a different stream name.");
+						break;
+					
+					case "NetStream.Publish.Start":
+						// Success!
+						if(saveCheck.selected == true) {
+							startRecord();
+						}
+						break;
+					
+				}
+				
+			}
+			
+			private function setUpLowQualityBroadcast():H264VideoStreamSettings {
+				
+				var h264settings:H264VideoStreamSettings = new H264VideoStreamSettings();
+				h264settings.setProfileLevel(H264Profile.BASELINE, H264Level.LEVEL_1);
+				
+				camera.setMode(160 ,120,15);
+				camera.setKeyFrameInterval(30);
+				camera.setQuality(32*1000,75);
+				
+				if(bufferCheck.selected) {
+					netStream.bufferTime = 1;
+				}
+				microphone.encodeQuality = 4;
+				return h264settings;
+				
+			}
+			
+			private function setUpMidQualityBroadcast():H264VideoStreamSettings {
+				
+				var h264settings:H264VideoStreamSettings = new H264VideoStreamSettings();
+				h264settings..setProfileLevel(H264Profile.BASELINE, H264Level.LEVEL_3_1);
+				
+				camera.setMode(320 ,240,15);
+				camera.setQuality(50*1000,80);
+				camera.setKeyFrameInterval(30);
+				
+				if(bufferCheck.selected) {
+					netStream.bufferTime = 2;
+				}
+				microphone.encodeQuality = 6;
+				return h264settings;
+				
+			}
+			
+			private function setUpHighQualityBroadcast():H264VideoStreamSettings {
+				
+				var h264settings:H264VideoStreamSettings = new H264VideoStreamSettings();
+				h264settings.setProfileLevel(H264Profile.BASELINE, H264Level.LEVEL_3_1);
+				
+				camera.setMode(640 ,480,15);
+				camera.setQuality(100 * 1000, 85);
+				camera.setKeyFrameInterval(45);
+				
+				if(bufferCheck.selected) {
+					netStream.bufferTime=3;
+				}
+				
+				microphone.encodeQuality = 10;
+				return h264settings;
+				
+			}
+			
+			/**
+			 * API Methods invoked by Red5
+			 */
+			public function onBWDone(obj:Object=null):void
+			{
+				log(obj);
+			}
+			public function onBWCheck(obj:Object=null):void
+			{
+				log(obj);
+			}
+			public function onMetaData(obj:Object):void
+			{
+				log(obj);
+			}
+			
+			
+			// Define a custom function for the labelToItemFunction property
+			// to convert the new value to an Object of the correct format
+			// for storage in the data provider of the control.
+			public function selectCameraLabel(value:String):Object {
+				
+				return value;
+			}     
+			
+			// Event handler to determine if the selected item is new.
+			protected function selectCamera(event:IndexChangeEvent):void
+			{
+				
+				if(camera != null) {
+					videoContainer.removeChildAt(0);
+				}
+				
+				var idx:String = String(cbCamera.selectedIndex);
+				camera = Camera.getCamera(idx);
+				
+				if(camera != null) {
+					// Alert.show(cbCamera.selectedItem);
+					// Attach Camera to Video display
+					video = new Video();
+					video.attachCamera(camera);
+					videoContainer.addChild(video);
+				}
+			}
+			
+			public function stopRecordHandler(e:ResultEvent):void
+			{
+				// var xlData:Object = JSON.parse(e.result);   
+				mx.controls.Alert.show("레코딩을 끝냈습니다.");
+				stopBroadcast();
+			}   
+			
+			private function startRecordHandler(e:ResultEvent):void
+			{
+				var data:Object = e.result;
+				// do whatever else here
+				mx.controls.Alert.show("레코딩을 시작합니다.");
+			}
+			
+			public function startRecord_FaultHandler(e:FaultEvent):void
+			{
+				mx.controls.Alert.show("레코딩시작이 실패되었습니다.");
+			}
+			
+			public function stopRecord_faultHandler(e:FaultEvent):void
+			{
+				mx.controls.Alert.show("레코딩종료가 실패되었습니다.");
+			}
+			
+			private function startendBroadcast(start:Boolean):void {
+				
+				var flag:String = "1"; // start
+				if(start == false) {
+					if(startedRecord == true) {
+						flag = "0";
+					}
+					else {
+						flag = "2";
+					}
+				}
+				
+				httpData = new HTTPService();
+				httpData.url = "http://1.234.63.171/api/startendBroadcast.php?broadcast_no="+broadcastNo+"&flag="+flag;
+				httpData.method = URLRequestMethod.GET;
+				httpData.send();    
+			}
+			
+			private function startRecord():void {
+				
+				httpData = new HTTPService();
+				httpData.url = "http://1.234.63.171:5080/api/v1/applications/live/streams/"+streamName+"/action/startrecord?accessToken="+accessToken;
+				//httpData.url = "http://localhost:5080/api/v1/applications/live/streams/"+streamName+"/action/startrecord?accessToken="+accessToken;
+				httpData.method = URLRequestMethod.GET;
+				httpData.addEventListener("result", startRecordHandler);
+				httpData.addEventListener("fault", startRecord_FaultHandler);
+				httpData.send();    
+				
+				startedRecord = true;
+			}
+			
+			
+			private function stopRecord():void {
+				
+				httpData = new HTTPService();
+				httpData.url = "http://1.234.63.171:5080/api/v1/applications/live/streams/"+streamName+"/action/stoprecord?accessToken="+accessToken;
+				httpData.method = "GET";
+				httpData.addEventListener("result", stopRecordHandler);
+				httpData.addEventListener("fault", stopRecord_faultHandler);
+				httpData.send();  
+				
+				startedRecord = false;
+			}
+		]]>
+	</fx:Script>
+</s:Application>
