@@ -31,7 +31,9 @@ You can broadcast yourself with multiple calls.
 
 **NOTE** if you feel high latency, please check your bandwidth limits and player buffering.
 
-
+<p align='center'>
+    <img src="https://github.com/happymario/GulTV/blob/master/2_prototype.png"/>
+</p>
 
 Acknowledgements
 ----------------
